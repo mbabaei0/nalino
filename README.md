@@ -1,2 +1,2 @@
 # nalino
-for testing porpus
+for testing purposes
