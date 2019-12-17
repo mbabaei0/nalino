@@ -1,0 +1,145 @@
+.comments {
+  padding: 2rem;
+
+  .addComment {
+   padding: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(
+        75deg,
+        rgba(rgb(240, 240, 240), 0.9),
+        rgba(rgb(231, 231, 231), 0.8)
+      ),
+      url(assets/img/logo1.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    filter: grayscale(1);
+    border-radius: $border-radius;
+    margin: 2rem;
+    @media only screen and (max-width: $bp-medium) {
+      flex-direction: column;
+      margin: 0.5rem;
+    }
+    &__text{
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: $text-color-light;
+    }
+    &__button{
+      //padding: 1.5rem!important;
+
+      margin: 2rem;
+
+      strong{
+        //padding: 2rem;
+      }
+    }
+  }
+  .addComment-active{
+    .rate{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      strong{
+        padding: 1rem;
+        font-size: 1.2rem;
+      }
+
+    }
+    &__form{
+      flex-direction: column;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    @media only screen and (max-width: $bp-medium) {
+      flex-direction: column;
+      padding-top: 1.5rem;
+    }
+    .form__group{
+      width: 70%;
+    }
+      textarea,input{
+        width: 100%;
+        font-size: 16px;
+
+      }
+    }
+  }
+  .review {
+    background-color: #fff;
+
+    // border-radius: $border-radius;
+    padding: 3rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    overflow: hidden;
+    &:not(:last-child) {
+      border-bottom: 1px solid $border-color;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    &__text {
+      margin-top: 2rem;
+      padding: 0 4rem;
+      color: $text-color-light;
+      font-size: 1.4rem;
+      z-index: 10;
+      position: relative;
+    }
+
+    &__user {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    &__photo {
+      height: 4.5rem;
+      width: 4.5rem;
+      border-radius: 50%;
+      margin-left: 1.5rem;
+    }
+
+    &__user-box {
+      // margin-right: auto;
+    }
+
+    &__user-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    &__user-date {
+      font-size: 1rem;
+      color: $text-color-light;
+    }
+
+    &__rating {
+      color: $primary-color;
+      font-size: 2.2rem;
+      padding: 0 1rem;
+      font-weight: 300;
+    }
+
+    &::before {
+      content: "\201C";
+      position: absolute;
+      top: -2.75rem;
+      left: 0rem;
+      line-height: 1;
+      font-size: 20rem;
+      color: $bg-color;
+      font-family: sans-serif;
+      z-index: 1;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.productDetail{
+  padding: 2rem;
+
+  &__title  {
+    font-size: 1.4rem;
+  }
+
+  &__table{
+    width: 100%;
+
+    &-row{
+
+      margin: 1rem;
+
+      th{
+         width: 13rem;
+          padding: 1rem;
+          font-size: 1.6rem;
+          margin: 1rem;
+          background: whitesmoke;
+          font-weight: 600;
+        }
+      td{
+        font-size: 1.6rem;
+        background: rgb(248, 248, 248);
+        padding: 1rem;
+      }
+    }
+  }
+}

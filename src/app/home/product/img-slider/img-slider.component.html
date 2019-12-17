@@ -1,0 +1,39 @@
+<div class="pslider">
+       
+    
+    <div class="pslider__slides">
+        
+        <div class="pslider__slides-slide" >
+                <div class="badge"> ۲۰ ٪ تخفیف</div>
+                <div class="badge gift"><i class="flaticon-gift-1"></i></div>
+                <div class="featured__timer">
+                    <span>۲ : ۲۶ : ۴۲</span>
+                </div>
+                <img [src]="slide.url" alt="" [@img]="num">
+                <div class="pslider__next" (click)="next()">
+                    <i class="flaticon-back"></i>
+                </div>
+                <div class="pslider__prev" (click)="prev()">
+                    <i class="flaticon-next"></i>
+                </div>
+        </div>
+        <div class="pslider__legend">
+        
+            <div class="pslider__legend-bullet" 
+            *ngFor="let item of sliderItems; index as i" 
+            (click)="num = i"
+            [ngClass]="{'active': num == i }">
+               
+    
+            </div>
+        </div>
+    </div>
+    
+    <div class="pslider__buttom">
+        <img *ngFor="let item of sliderItems; index as i" 
+         (click)="setItem(i)"
+         [src]="item.url" alt="" 
+         [ngClass]="{'active': num == i }">
+    </div>
+    
+</div>

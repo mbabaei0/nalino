@@ -1,0 +1,204 @@
+<app-modal [visible]="allertMeModal" (visibleChange)="closeModal($event)">
+    <div class="warranteeModal">
+        <div class="main-heading">اطلاعیه مهم</div>
+        <p>
+            راهنمای ثبت گارانتی برای ثبت گارانتی باید وارد کاربریتان شوید. در
+            صورتیکه هنوز عضو خانواده نالینو نشده اید ابتدا ثبت نام کنید سپس
+            اقدام به ثبت گارانتی نمایید. لطفا برای ارسال صحیح اطلاعات، برای ورود
+            اعداد از کیبورد انگلیسی استفاده کنید.
+        </p>
+    </div>
+</app-modal>
+<!---------------------------------- modal end --------------------------------->
+<div class="warrantee">
+    <div class="box">
+        <div class="main-heading">فرم ثبت گارانتی</div>
+        <p>به خانواده نالینو خوش آمدی (:</p>
+        <p>
+            به خانواده نالینو خوش آمدید نالینو به عنوان اولین تولید کننده چدن
+            استاندارد در ایران و با داشتن 41 سال سابقه تولید ، حامی مصرف کنندگان
+            بوده و حتی برای سنجش این امر خود را موظف به گرفتن ISO 10004:2012
+            (رضایتمندی - مشتری مداری) کرده که بصورت ادواری از طرف سازمان
+            استاندارد در این زمینه هم کنترل شده و شرایط ایده آل برای مشتریان خود
+            قائل می شود. نالینو به عنوان برندی پیشرو و با کیفیت ، در سال های
+            گذشته شاهد یکسری سو استفاده از نام و برند خود بوده که محصولات نالینو
+            با شکل نالینو در کارگاه های نامعتبر و بدون استاندارد ساخته و روانه
+            بازار شده که البته با پیگیری های قانونی برخورد لازم انجام شد اما
+            آنرا کافی ندیده و برای راحتی خیال خریداران محصولات خود همه محصولات
+            را با دفترچه گارانتی و کدی یکتا به مشتریان عرضه کرده ایم.
+        </p>
+        <p>
+            برای مطمئن تر شدن مشتریان عزیزمان سامانه پیامکی و صفحه اینترنتی ثبت
+            گارانتی را قرار دادیم . قابل تذکر است که عزیزانی که بصورت پیامکی
+            اقدام به ثبت گارانتی می نمایند حتما باید اطلاعات خود را در فرم
+            اینترنتی پیش رو نیز تکمیل نمایند.
+        </p>
+        <div class="main-heading-2">اطلاعات شخصی</div>
+        <form action="">
+            <div class="form__group">
+                <input
+                    type="text"
+                    class="form__input"
+                    placeholder="نام و نام خانوادگی"
+                    id="name"
+                    required
+                />
+                <label for="name" class="form__label">نام و نام خانوادگی</label>
+            </div>
+
+            <div class="form__group">
+                <input
+                    type="text"
+                    class="form__input"
+                    placeholder="شماره تلفن"
+                    id="pass"
+                    required
+                />
+                <label for="pass" class="form__label">شماره تلفن</label>
+            </div>
+            <div class="form__group">
+                <input
+                    type="text"
+                    class="form__input"
+                    placeholder="ایمیل"
+                    id="pass"
+                    required
+                />
+                <label for="pass" class="form__label">ایمیل</label>
+            </div>
+            <div class="form__group">
+                <input
+                    type="text"
+                    class="form__input"
+                    placeholder="تلفن ثابت"
+                    id="pass"
+                    required
+                />
+                <label for="pass" class="form__label">تلفن ثابت</label>
+            </div>
+            <div class="radios">
+                <strong>جنسیت</strong>
+                <div class="form__radio-group">
+                    <input
+                        type="radio"
+                        class="form__radio-input"
+                        id="man"
+                        name="size"
+                    />
+                    <label for="man" class="form__radio-label">
+                        <span class="form__radio-button"></span>
+                    </label>
+                    <span>مرد</span>
+                </div>
+                <div class="form__radio-group">
+                    <input
+                        type="radio"
+                        class="form__radio-input"
+                        id="zan"
+                        name="size"
+                    />
+                    <label for="zan" class="form__radio-label">
+                        <span class="form__radio-button"></span>
+                    </label>
+                    <span>زن</span>
+                </div>
+            </div>
+            <div class="date">
+                <strong>تاریخ تولد</strong>
+                <div class="form__group">
+                    <select name="carlist" form="carform" class="form__input">
+                        <option value="volvo">بهمن</option>
+                        <option value="saab">Saab</option>
+                        <option value="opel">Opel</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <select name="carlist" form="carform" class="form__input">
+                        <option value="volvo">۱۱</option>
+                        <option value="saab">۶۷</option>
+                        <option value="opel">Opel</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <input
+                        type="text"
+                        class="form__input"
+                        placeholder="سال"
+                        id="pass"
+                        required
+                    />
+                </div>
+            </div>
+        </form>
+        <div class="main-heading-2">اطلاعات فروشگاه</div>
+        <form action="">
+            <div class="form__group">
+                <input
+                    type="text"
+                    class="form__input"
+                    placeholder="کد محصول"
+                    id="name"
+                    required
+                />
+                <label for="name" class="form__label">کد محصول</label>
+            </div>
+            <div class="form__group">
+                <select name="carlist" form="carform" class="form__input">
+                    <option value="volvo">اینترنتی </option>
+                    <option value="saab">زنجیره ای</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+                <label for="pass" class="form__label">نوع فروشگاه</label>
+            </div>
+            <div class="dropDown">
+                    <ng-select class="custom"></ng-select>
+                
+            </div>
+            <div class="dropDown">
+                    <ng-select class="custom"></ng-select>
+                
+            </div>
+
+                <div class="form__group">
+                        <textarea
+                            type="text"
+                            class="form__input"
+                            placeholder="آدرس"
+                            id="name"
+                            required
+                        ></textarea>
+                        <!-- <label for="name" class="form__label">کد محصول</label> -->
+                </div>
+        </form>
+        <div class="main-heading-2">آدرس  خریدار</div>
+        <form action="">
+                <div class="dropDown">
+                        <ng-select class="custom"></ng-select>
+                    
+                </div>
+                <div class="dropDown">
+                        <ng-select class="custom"></ng-select>
+                    
+                </div>
+    
+                    <div class="form__group">
+                            <textarea
+                                type="text"
+                                class="form__input"
+                                placeholder="آدرس"
+                                id="name"
+                                required
+                            ></textarea>
+                            <!-- <label for="name" class="form__label">کد محصول</label> -->
+                    </div>
+
+            <div class="submit">
+                <button class="btn-primary" type="submit">ثبت  گارانتی محصول</button>
+                
+            </div>
+        </form>
+    </div>
+</div>

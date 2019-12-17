@@ -1,0 +1,92 @@
+.slider__container{
+  grid-column: center-start/center-end;
+  position: relative;
+}
+.hero{
+  color: white;
+  line-height: 45px;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+}
+.slider{
+  display: grid;
+  grid-template-columns: repeat(8,[col-start] 1fr [col-end]);
+  &__slides{
+    grid-column: col-start 1 / col-end 8;
+     position: relative;
+    &-slide{
+
+      width: 100%;
+      height: 35rem;
+      object-fit: cover;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+      overflow: hidden;
+      border:1rem solid white;
+      box-shadow: $box-shadow;
+
+      img{
+        height: 100%;
+        width: 100%;
+        transition: all 1s ease;
+
+      }
+    }
+  }
+  .pager{
+    color: $primary-color;
+    opacity: 0.3;
+    background: white;
+    box-shadow: $box-shadow;
+    position: absolute;
+   bottom: 1.5rem;
+    border-radius: 0.5rem;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &::before{
+      color: currentColor;
+      font-size: 2rem;;
+    }
+    &:active{
+      box-shadow: $box-shadow-click;
+      transform: translateY(2px);
+    }
+    &:hover{
+      opacity: 0.7
+    }
+  }
+  &__next{
+    @extend .pager;
+    left: 15px;
+  }
+  &__prev{
+    @extend .pager;
+    left: 50px;
+
+  }
+  &__legend{
+    position: absolute;
+
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    top: 20px;
+    right: 20px;
+    opacity: 0.8;
+    &-bullet{
+      cursor: pointer;
+      margin: 2px;
+      background:rgb(253, 253, 253);
+      width: 10px ;
+      height: 6px;
+      border-radius: 60px;
+      transition: all 0.3s ease-in-out;
+    }
+    .active{
+      background: $primary-color;
+      width: 30px ;
+    }
+
+  }
+}

@@ -1,0 +1,21 @@
+.p404{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+
+  img{
+    width: 40vw;
+    margin: 2rem;
+    @media only screen and (max-width: $bp-medium) {
+      width: 80vw;
+    }
+  }
+  &__title{
+    font-size: 1.8rem;
+    color: $text-color-dark;
+  }
+}

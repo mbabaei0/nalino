@@ -1,0 +1,117 @@
+.featured__container{
+  grid-column: center-start/col-end 4 ;
+  grid-row: 2/6;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  background: white;
+  overflow: hidden;
+  @media only screen and (max-width: $bp-small) {
+
+    grid-column: center-start/center-end ;
+
+    }
+
+}
+.featured{
+  &__top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-text {
+      padding: 0 2rem;
+      font-size: 2rem;
+      color: $primary-color;
+    }
+    &-button{
+      border:none;
+      background: $primary-color-2;
+      color: white;
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      border-bottom-right-radius: 6rem;
+      cursor: pointer;
+      span{
+        padding:0 1rem;
+        font-size: 1.8rem;
+        transition: all 0.2s ease-in;
+
+        &:hover{
+          padding:0 1.3rem;
+        }
+      }
+    }
+  }
+  &__timer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 3rem;
+    color: $text-color-dark;
+    span{
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+  &__body{
+    padding: 2rem;
+    padding-bottom: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &-img{
+      // height: 20rem;
+      width: 30rem;
+
+      img{
+        width: 100%;
+      }
+    }
+
+    &-info{
+      del{
+        font-size: 1.3rem;
+        color: $text-color-light;
+      }
+      .price{
+        padding: 1rem 0;
+        color: $primary-color;
+
+      }
+      ul{
+        padding: 1rem;
+        color: $text-color-dark;
+        font-size: 1.2rem;
+        list-style-type: square;
+      }
+      .badge{
+        position: absolute;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+.not-featured{
+
+  figure{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+   // border-radius: 2rem;
+   // box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    img{
+      // object-fit: cover;
+      // display: block;
+      width: 100%;
+    }
+  }
+
+}

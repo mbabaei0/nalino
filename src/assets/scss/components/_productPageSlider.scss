@@ -1,0 +1,179 @@
+
+.pslider{
+  margin-top: 2rem;
+  display: grid;
+  grid-row-gap: 2rem;
+  grid-template-columns: repeat(8,[col-start] 1fr [col-end]);
+  &__slides{
+    grid-column: col-start 1 / col-end 8;
+     position: relative;
+    &-slide{
+
+      width: 100%;
+      //height: 35rem;
+      object-fit: cover;
+      //border-bottom-left-radius: $border-radius;
+      border-radius: $border-radius;
+      //border-bottom-right-radius: $border-radius;
+      //overflow: hidden;
+     // border:1rem solid white;
+     // box-shadow: $box-shadow;
+     // background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 3;
+      @media only screen and (max-width: $bp-medium) {
+        overflow: hidden;
+
+     }
+      img{
+        //height: 100%;
+        width: 50%;
+        transition: all 1s ease;
+        z-index: 5;
+
+      }
+      &::after{
+        background-image: linear-gradient(to right, rgba($primary-color-2 ,.9) ,  rgba($primary-color-2 ,.5));
+        transform: translateX(-5rem);
+        content: "";
+        position: absolute;
+        width: 30rem;
+        height: 30rem;
+        border-radius: 50%;
+        z-index: 1;
+        left: 0;
+        @media only screen and (max-width: $bp-medium) {
+          left: -5rem;
+
+       }
+
+      }
+    }
+  }
+  .gift{
+    z-index: 6;
+    right: 30%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    font-weight: 800;
+    font-size: 1.6rem;
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 1.3rem;
+      right: auto;
+      left: 2rem;
+
+    }
+  }
+  .badge{
+    z-index: 6;
+    font-size: 2rem;
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 1.5rem;
+
+
+    }
+  }
+  .pager{
+    z-index: 5;
+    color: $primary-color;
+    opacity: 0.3;
+    background: rgb(255, 255, 255);
+    box-shadow: $box-shadow;
+    position: absolute;
+     top: 45%;
+    border-radius: 0.5rem;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &::before{
+      color: currentColor;
+      font-size: 2rem;;
+    }
+    &:active{
+      box-shadow: $box-shadow-click;
+      transform: translateY(2px);
+    }
+    &:hover{
+      opacity: 0.7
+    }
+  }
+  &__next{
+    @extend .pager;
+    left:-1px;
+  }
+  &__prev{
+    @extend .pager;
+    right: -1px;
+
+  }
+  &__legend{
+    position: absolute;
+    z-index: 6;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    bottom: 0;
+    right: 40%;
+   text-align: center;
+    opacity: 0.8;
+    &-bullet{
+      cursor: pointer;
+      margin: 2px;
+      background:rgb(226, 226, 226);
+      width: 10px ;
+      height: 6px;
+      border-radius: 60px;
+      transition: all 0.3s ease-in-out;
+    }
+    .active{
+      background: $primary-color;
+      width: 30px ;
+    }
+    @media only screen and (max-width: $bp-medium) {
+     bottom: 1rem;
+
+   }
+  }
+
+  &__buttom{
+   // display: flex;
+    //margin-top: 2rem;
+    align-items: center;
+    grid-column: 1/-1;
+    justify-content: space-around;
+    // background: white;
+    border-radius: $border-radius;
+   margin-top: 1rem;
+     // box-shadow: $box-shadow;
+    z-index: 1111;
+    overflow: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    img{
+      width: 8rem;
+      margin: 1rem;
+      filter: opacity(0.2);
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent ;
+      @media only screen and (max-width: $bp-medium) {
+        width: 10rem;
+
+     }
+
+    }
+    .active{
+      filter: opacity(1);
+      transform: scale(1.2);
+      border-bottom: 2px solid $primary-color-3 ;
+      //border-radius: $border-radius;
+    }
+    &::-webkit-scrollbar {
+      width: 0 !important ;
+      display: none!important;
+    }
+  }
+}

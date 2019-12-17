@@ -1,0 +1,65 @@
+<div class="branches">
+    <div class="main-heading">شعب و نمایندگی های نالینو</div>
+
+    <ul class="branches__list">
+        <li
+            class="branches__list-item"
+            *ngFor="let panel of categoryItems; index as i"
+        >
+            <div
+                class="main-image"
+                [ngClass]="{ active: panel.state }"
+                (click)="openExpansionPanel(i)"
+            >
+                <img [src]="panel.img" alt="" />
+                <div>{{ panel.title }}</div>
+            </div>
+
+            <div class="sub" [ngClass]="{ expand: panel.state }">
+                <ul *ngFor="let store of panel.sub; index as i">
+                    <div class="store-image">
+                        <img src="assets/img/shahrvand.png" alt="" />
+                        <div>{{store.title}}</div>
+                    </div>
+                    <li>
+                        <div class="title">بیهقی</div>
+                        <div class="address">
+                            <i class="flaticon-placeholder"></i>
+                            آدرس: سعادت آباد-ميدان سرو- شهرك مخابرات- انتهاي
+                            بلوار پيام(نماینده:فاطمه پور اکبری)
+                        </div>
+                        <div class="phone">
+                            <span> 02122113319</span>
+                            <i class="flaticon-phone-call"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">بیهقی</div>
+                        <div class="address">
+                            <i class="flaticon-placeholder"></i>
+                            آدرس: سعادت آباد-ميدان سرو- شهرك مخابرات- انتهاي
+                            بلوار پيام(نماینده:فاطمه پور اکبری)
+                        </div>
+                        <div class="phone">
+                            <span> 02122113319</span>
+                            <i class="flaticon-phone-call"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">بیهقی</div>
+                        <div class="address">
+                            <i class="flaticon-placeholder"></i>
+                            آدرس: سعادت آباد-ميدان سرو- شهرك مخابرات- انتهاي
+                            بلوار پيام(نماینده:فاطمه پور اکبری)
+                        </div>
+                        <div class="phone">
+                            <span> 02122113319</span>
+                            <i class="flaticon-phone-call"></i>
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+        </li>
+    </ul>
+</div>

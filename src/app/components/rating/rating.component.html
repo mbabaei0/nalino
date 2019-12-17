@@ -1,0 +1,17 @@
+<!-- <div class="rating">
+    <i *ngFor="let item of emptyA " class="flaticon-star"></i>
+    <i *ngFor="let item of rateA" class="flaticon-star-1"></i>
+</div> |||| -->
+<div class="rating" *ngIf="!show">
+    <i *ngFor="let item of emptyA ;let i = index" 
+    [ngClass]="{active: item.active === true}"
+    (click)="onRate(i +1)" 
+    [@str]
+    class="flaticon-star-1 click"></i>
+</div>
+<div class="rating" *ngIf="show">
+    <i *ngFor="let item of emptyA ;let i = index" 
+    
+    [ngClass]="{active: item.active === true}"
+    class="flaticon-star-1"></i>
+</div>

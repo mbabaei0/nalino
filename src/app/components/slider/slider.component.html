@@ -1,0 +1,31 @@
+<div class="slider">
+       
+    
+    <div class="slider__slides">
+            <!-- <div class="hero">
+                    <div class="heading-1"> سایت محصولات زیبای نالینو برای همه</div>
+                    <div class="heading-5"> سایت محصولات زیبای نالینو برای همه</div>
+            </div> -->
+        <div class="slider__slides-slide" >
+                <img [src]="slide.url" alt="" [@img]="num">
+                <div class="slider__next" (click)="next()">
+                    <i class="flaticon-back"></i>
+                </div>
+                <div class="slider__prev" (click)="prev()">
+                    <i class="flaticon-next"></i>
+                </div>
+        </div>
+        <div class="slider__legend">
+        
+            <div class="slider__legend-bullet" 
+            *ngFor="let item of sliderItems; index as i" 
+            (click)="num = i"
+            [ngClass]="{'active': num == i }">
+               
+    
+            </div>
+        </div>
+    </div>
+    
+    
+</div>

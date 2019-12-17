@@ -1,0 +1,90 @@
+<div class="comments">
+    <div class="addComment" *ngIf="!logedIn">
+        <div class="addComment__text">برای ثبت نظر باید وارد سایت شوید</div>
+        <button class="addComment__button btn-primary" (click)="logedIn = true">
+            <strong> ورود به حساب</strong>
+            <i class="flaticon-lock"></i>
+        </button>
+    </div>
+    <div class="addComment-active" *ngIf="logedIn">
+        <div class="rate">
+            <strong>رای شما به این محصول</strong>
+            <app-rating [show]="false"></app-rating>
+        </div>
+        <form class="addComment-active__form" action="">
+            <div class="form__group">
+                    <label for="name" class="form__label">نام و نام خانوادگی</label>
+                <input
+                    type="text"
+                    class="form__input"
+                    placeholder=""
+                    id="name"
+                    required
+                />
+               
+            </div>
+            <div class="form__group">
+                <label for="email" class="form__label">متن نظر</label>
+                <textarea
+                    class="form__input"
+                  
+                    id="email"
+                    required
+                ></textarea>
+            </div>
+
+            <button class="addComment__button btn-primary">
+                <strong> ثبت نظر</strong>
+                <i class="flaticon-success"></i>
+            </button>
+        </form>
+    </div>
+    <div class="main-heading">نظرات مفید</div>
+    <figure class="review">
+        <figcaption class="review__user">
+            <img src="assets/img/a.jpg" alt="User 1" class="review__photo" />
+            <div class="review__user-box">
+                <p class="review__user-name">احمد پورمخبر</p>
+                <p class="review__user-date">۲۸ مهر ۹۸</p>
+            </div>
+            <div class="review__rating">۸.۲</div>
+        </figcaption>
+        <blockquote class="review__text">
+            ولید کننده آنلاین متن تصادفی لورم ایپسوم فارسی ، انان های دیگر برای
+            برای استفاده در صنعت چاپ ، صفحه‌آرایی و طراحی ان های دیگر برای برای
+            استفاده در صنعت چاپ ، صفحه‌آرایی و طراحی
+        </blockquote>
+    </figure>
+    <figure class="review">
+        <figcaption class="review__user">
+            <img src="assets/img/user.jpg" alt="User 1" class="review__photo" />
+            <div class="review__user-box">
+                <p class="review__user-name">دانلد ترامپ</p>
+                <p class="review__user-date">۲۸ مهر ۹۸</p>
+            </div>
+            <div class="review__rating">۹.۹</div>
+        </figcaption>
+        <blockquote class="review__text">
+            ولید کننده آنلاین متن تصادفی لورم ایپسوم فارسی ، انگلیسی ، اسپانیایی
+            و ایتالیایی و.. زبان هاییایی و.. زبان های دیگر برای برای استفاده در
+            صنعت چاپ ، صفحه‌آرایی و طراحی
+        </blockquote>
+    </figure>
+    <figure class="review">
+        <figcaption class="review__user">
+            <img src="assets/img/user.jpg" alt="User 1" class="review__photo" />
+            <div class="review__user-box">
+                <p class="review__user-name">محمد بابایی</p>
+                <p class="review__user-date">۲۸ مهر ۹۸</p>
+            </div>
+            <div class="review__rating">۶.۲</div>
+        </figcaption>
+        <blockquote class="review__text">
+            ولید کننده آنلاین متن تصادفی لورم ایپسوم فارسی ، انگلیسی ، اسپانیایی
+            و ایتالیایی و.. زبان های دیگر برای برای استفاده در صنعت چاپ ،
+            صفحه‌آرایی و طراحی ولید کننده آنلاین متن تصادفی لورم ایپسوم فارسی ،
+            انگلیسی ، اسپانیایی و ایتالیایی و.. زبان های دیگر برای برای استفاده
+            در صنعت چاپ ، صفحه‌آرایی و طراحی
+        </blockquote>
+    </figure>
+</div>

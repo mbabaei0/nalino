@@ -1,0 +1,34 @@
+.banner{
+  // grid-column: center-start/center-end;
+  // margin-top: 3rem;
+
+  grid-column: nav-start/body-end;
+  grid-row: 1/2;
+  position: relative;
+  z-index: 10000;
+  height: 6rem;
+  &__box{
+    position: relative;
+    height: 6rem;
+
+   &-img{
+    width: 100%;
+    // border-radius: $border-radius;
+    height: 100%;
+    // box-shadow:  $box-shadow;
+   }
+
+   &-icon{
+    position: absolute;
+    cursor: pointer;
+    left: 1.4rem;
+    top: 2rem;
+
+    &::before{
+      font-size: 1.5rem !important;
+      color :white;
+    }
+   }
+
+  }
+}

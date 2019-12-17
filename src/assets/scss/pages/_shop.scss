@@ -1,0 +1,642 @@
+.shop {
+  &__stepper {
+    padding: 5rem;
+    padding-top: 2rem;
+
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      cursor: pointer;
+      font-size: 1.6rem;
+      @media only screen and (max-width: $bp-medium) {
+        font-size: 1.3rem;
+      }
+
+      li {
+        display: flex;
+        width: 30%;
+        color: $text-color-light;
+        flex-direction: column-reverse;
+        align-items: center;
+        position: relative;
+
+        i {
+          padding: 1rem;
+          position: relative;
+          &::before {
+            font-size: 4rem;
+            @media only screen and (max-width: $bp-medium) {
+              font-size: 3rem;
+            }
+          }
+        }
+        &:not(:first-child) {
+          &::after {
+            content: "";
+            position: absolute;
+            height: 3px;
+            background: $primary-color-3;
+            top: 50%;
+            right: -10rem;
+            width: 50%;
+            transform: scaleX(0);
+            transform-origin: 30rem;
+            transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            @media only screen and (max-width: $bp-medium) {
+              right: -3rem;
+            }
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            height: 2px;
+            background: $border-color;
+            top: 50%;
+            right: -10rem;
+            width: 50%;
+            @media only screen and (max-width: $bp-medium) {
+              right: -3rem;
+            }
+          }
+        }
+      }
+
+      .tactive {
+        color: $primary-color-3;
+        i {
+          &::after {
+            content: "";
+            position: absolute;
+            height: 20px;
+            background: $primary-color-3;
+            top: 40%;
+            right: 40%;
+            opacity: 0;
+            width: 20px;
+            border-radius: 50%;
+            // transform: scaleX(0);
+            // transform-origin:30rem;
+            animation: spring 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s 1;
+            @media only screen and (max-width: $bp-medium) {
+              right: -3rem;
+            }
+          }
+        }
+        &:not(:first-child) {
+          &::after {
+            content: "";
+            position: absolute;
+            height: 3px;
+            background: $primary-color-3;
+            top: 50%;
+            right: -10rem;
+            width: 50%;
+            transform: scaleX(1);
+            @media only screen and (max-width: $bp-medium) {
+              right: -3rem;
+            }
+          }
+          &::before {
+          }
+        }
+      }
+    }
+
+    &-body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 4rem;
+    }
+    &-tab1 {
+      position: relative;
+      display: flex;
+      // align-items: center;
+      justify-content: space-evenly;
+      margin: 0 2rem;
+      //width: 100%;
+
+      table {
+        overflow: auto;
+        @media only screen and (max-width: $bp-medium) {
+          display: grid;
+          padding: 0 2rem;
+        }
+        th {
+          color: $text-color-light;
+          text-align: center;
+          font-size: 1.4rem;
+          background: white;
+          padding: 1rem 0;
+          @media only screen and (max-width: $bp-medium) {
+            display: none;
+          }
+        }
+        td {
+          color: $text-color-dark;
+          padding: 1rem 2rem;
+          font-size: 1.4rem;
+          background: rgb(248, 248, 248);
+          @media only screen and (max-width: $bp-medium) {
+            padding: 1rem;
+            background: none;
+          }
+        }
+        .items {
+          @media only screen and (max-width: $bp-medium) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1.5rem 0;
+            background: white;
+            box-shadow: $box-shadow;
+            border-radius: $border-radius;
+            padding: 1.5rem;
+          }
+        }
+        .index {
+          @media only screen and (max-width: $bp-medium) {
+            display: none;
+          }
+        }
+        .img {
+          img {
+            background: rgba(255, 127, 80, 0.212);
+            width: 7rem;
+            height: 7rem;
+            border-radius: 50%;
+            @media only screen and (max-width: $bp-medium) {
+              width: 12rem;
+              height: 12rem;
+            }
+          }
+        }
+        .number {
+          color: $primary-color-2;
+          border-radius: $border-radius;
+          //color: white;
+          display: flex;
+          align-items: center;
+          i {
+            cursor: pointer;
+            padding: 1.2rem;
+            transition: all 0.2s;
+            &::before {
+              font-size: 2.8rem;
+            }
+            &:active {
+              transform: translateY(5px);
+            }
+          }
+          strong {
+            font-size: 1.6rem;
+          }
+
+          @media only screen and (max-width: $bp-medium) {
+            flex-direction: row;
+            margin: 0.5rem;
+          }
+        }
+        .title {
+          // display: flex;
+          // flex-direction: column;
+          @media only screen and (max-width: $bp-medium) {
+            border-bottom: 1px solid $border-color;
+          }
+        }
+        .discount {
+          color: $primary-color-3;
+        }
+        .price {
+          color: $primary-color;
+          font-size: 1.8rem;
+        }
+        .remove {
+          color: $primary-color-2;
+          cursor: pointer;
+          @media only screen and (max-width: $bp-medium) {
+            background: $primary-color;
+            width: 100%;
+            color: white;
+            text-align: center;
+            border-radius: $border-radius;
+          }
+        }
+      }
+      .table {
+        flex: 3;
+      }
+      .total {
+        //position: absolute;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        background: #ececec;
+        left: 5px;
+        top: 50%;
+        padding: 1.5rem;
+        color: $text-color-light;
+        font-size: 2rem;
+        border-radius: $border-radius 0 0 $border-radius;
+        & > div {
+          display: flex;
+          flex-direction: column;
+          button {
+            align-self: flex-end;
+          }
+        }
+        .info {
+          font-size: 1.2rem;
+          padding: 1rem;
+          margin: 1rem;
+          border: 1px solid $primary-color-3;
+          border-radius: $border-radius;
+        }
+        &__price {
+          //font-weight: 600;
+          margin-bottom: 2.5rem;
+          strong {
+            color: $primary-color;
+          }
+        }
+        &__title {
+          //font-weight: 600;
+          font-size: 1.8rem;
+          margin-top: 1.5rem;
+          color: $text-color-dark;
+        }
+        &__discprice {
+          //font-weight: 600;
+          margin-top: 0.5rem;
+          font-size: 1.6rem;
+          strong {
+            color: $primary-color-3;
+          }
+        }
+        &__disctitle {
+          //font-weight: 600;
+          margin-top: 0.5rem;
+          font-size: 1.4rem;
+          color: $text-color-dark;
+        }
+        button {
+          align-self: flex-end;
+        }
+        .btn-blue {
+          padding: 0.8rem 1.5rem;
+          i {
+            padding-left: 0;
+          }
+        }
+        .form__group {
+          margin: 0;
+          input {
+            width: 100%;
+          }
+        }
+        @media only screen and (max-width: $bp-medium) {
+          align-items: center;
+          button {
+            align-self: center;
+            margin: 1.5rem 0;
+          }
+        }
+      }
+      @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+        .table {
+          width: 100vw;
+          overflow-x: auto;
+          .product {
+            padding: 0 4rem;
+          }
+        }
+      }
+    }
+    &-tab3 {
+      position: relative;
+      display: flex;
+      // align-items: center;
+      justify-content: space-evenly;
+
+      table {
+        flex: 1;
+        overflow: auto;
+        width: 100%;
+        th {
+          color: $text-color-light;
+          text-align: center;
+          font-size: 1.2rem;
+          background: white;
+          padding: 1rem 0;
+          @media only screen and (max-width: $bp-medium) {
+            display: none;
+          }
+        }
+        td {
+          color: $text-color-dark;
+          padding: 1rem 1rem;
+          font-size: 1.2rem;
+          background: rgb(248, 248, 248);
+          @media only screen and (max-width: $bp-medium) {
+            padding: 1rem;
+            background: none;
+          }
+        }
+        .items {
+          // border-right: 2px solid $primary-color;
+          @media only screen and (max-width: $bp-medium) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1.5rem;
+            background: white;
+            box-shadow: $box-shadow;
+            border-radius: $border-radius;
+            padding: 1.5rem;
+          }
+          //
+        }
+
+        .img {
+          img {
+            background: rgba(255, 127, 80, 0.212);
+            width: 7rem;
+            height: 7rem;
+            border-radius: 50%;
+            @media only screen and (max-width: $bp-medium) {
+              width: 12rem;
+              height: 12rem;
+            }
+          }
+        }
+        .number {
+          color: $primary-color-2;
+          border-radius: $border-radius;
+          //color: white;
+          display: flex;
+          align-items: center;
+          i {
+            cursor: pointer;
+            padding: 1.2rem;
+            transition: all 0.2s;
+            &::before {
+              font-size: 2.8rem;
+            }
+            &:active {
+              transform: translateY(5px);
+            }
+          }
+          strong {
+            font-size: 1.6rem;
+          }
+
+          @media only screen and (max-width: $bp-medium) {
+            //flex-direction: column;
+            margin: 2rem;
+          }
+        }
+        .title {
+          // display: flex;
+          // flex-direction: column;
+        }
+        .discount {
+          color: $primary-color-3;
+        }
+        .index {
+          @media only screen and (max-width: $bp-medium) {
+            display: none;
+          }
+        }
+        .price {
+          color: $primary-color;
+          font-size: 1.6rem;
+        }
+      }
+      .table {
+        flex: 1;
+
+      }
+      .total {
+        flex: 1;
+        //position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #ececec;
+        left: 5px;
+        top: 50%;
+        padding: 1rem;
+        color: $text-color-light;
+        font-size: 2rem;
+        border-radius: $border-radius 0 0 $border-radius;
+        &__price {
+          //font-weight: 600;
+          strong {
+            color: $primary-color;
+          }
+        }
+        &__price-2 {
+          //font-weight: 600;
+          font-size: 1.4rem;
+
+          strong {
+            color: $primary-color-3;
+          }
+        }
+        .main-heading {
+          &:after {
+            display: none;
+          }
+        }
+        button {
+          align-self: flex-end;
+          font-size: initial;
+        }
+        .main-heading {
+          font-size: 1.6rem;
+          margin-bottom: 0.5rem;
+        }
+        .form__group {
+          width: 100%;
+          textarea {
+            width: 100%;
+          }
+        }
+        &__send {
+          display: flex;
+          &-item {
+            cursor: pointer;
+            margin: 1rem;
+            display: flex;
+            align-items: center;
+            width: 15rem;
+            flex-direction: column;
+            font-size: 1.2rem;
+            background: white;
+            border-radius: $border-radius;
+            padding: 2rem;
+            //opacity: .7;
+            position: relative;
+
+            @media only screen and (max-width: $bp-medium) {
+              //flex-direction: column;
+              padding: 1rem;
+              width: 10rem;
+              margin: 0.5rem;
+            }
+            i {
+              &::before {
+                font-size: 4rem;
+              }
+            }
+            .desc {
+              border-radius: 2rem;
+              position: absolute;
+              background: #f9a731;
+              // display: none;
+              color: #fdfff4;
+              visibility: hidden;
+              text-align: center;
+              top: 60%;
+              z-index: 100;
+              opacity: 0;
+              height: 0;
+              padding: 1rem;
+              font-size: 1.2rem;
+              width: 100%;
+              transition: all 0.2s ease;
+            }
+            &:hover .desc {
+              height: 10rem;
+              visibility: visible;
+              opacity: 1;
+              @media only screen and (max-width: $bp-medium) {
+                height: 15rem;
+              }
+            }
+          }
+          .active {
+            box-shadow: $box-shadow;
+            color: $primary-color-3;
+            opacity: 1;
+          }
+        }
+      }
+      .sucsess {
+        background: rgba(118, 255, 179, 0.15);
+        color: #2a8251;
+        font-size: 1.4rem;
+        @media only screen and (max-width: $bp-medium) {
+          order: 1;
+        }
+        i{
+          padding: 2rem;
+
+          &::before{
+            font-size: 2rem;
+          }
+        }
+        &_message-title{
+          padding: 2rem 0;
+          font-weight: 600;
+        }
+        p{
+          padding: 2rem;
+        }
+      }
+      .sucsesst{
+        @media only screen and (max-width: $bp-medium) {
+          order: 2;
+        }
+      }
+      @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+        .table {
+          width: 100vw;
+          display: grid;
+
+          .product {
+            padding: 0 4rem;
+          }
+        }
+      }
+    }
+  }
+  .tab2 {
+    display: flex;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    overflow: hidden;
+    background: white;
+    @media only screen and (max-width: $bp-medium) {
+      flex-direction: column;
+    }
+    &__choose {
+      flex: 1;
+      font-size: 1.4rem;
+      background: white;
+      color: $text-color-dark;
+      padding: 2rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .form__radio-group {
+        margin: 1.5rem 0;
+        i {
+          color: $primary-color-3;
+          padding: 0 1rem;
+          cursor: pointer;
+        }
+      }
+      button {
+        display: flex;
+        align-items: center;
+        padding: 0.8rem 1.5rem;
+        font-size: 1.2rem;
+        span {
+          padding: 0 1rem;
+        }
+        i {
+          padding-left: 0;
+          padding: 0;
+          &::before {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+    &__add {
+      flex: 1;
+      font-size: 1.4rem;
+      background: #f1f1f1;
+      border-radius: $border-radius;
+      color: $text-color-dark;
+      text-align: center;
+      padding: 2rem 3rem;
+      .dropDown {
+        margin-bottom: 4rem;
+      }
+      input {
+        width: 100%;
+      }
+      .form__radio-group {
+        margin: 1.5rem 0;
+      }
+    }
+  }
+  .actions {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  .t3-reset {
+    width: 90%;
+    @media only screen and (max-width: $bp-medium) {
+      width: 100%;
+    }
+  }
+}

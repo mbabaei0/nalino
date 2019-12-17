@@ -1,0 +1,47 @@
+.form__group{
+    margin : 1rem 0;
+    position: relative;
+}
+
+.option{
+    background: white;
+    max-height: 15rem; 
+    overflow-y: scroll;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    z-index: 1000;
+
+   // box-shadow: $box-shadow;
+  
+    &__item{
+        font-size: 1.6rem;
+        padding: 1rem ;
+        cursor: pointer;
+        background: white;
+        transition: all 0.2s ease;
+        &:hover{
+            background: whitesmoke;
+        }
+    }
+}
+
+.option{
+    display: none!important;
+}
+
+.active{
+    display:block!important;
+}
+input{
+  
+}
+.backDrop{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: yellow;
+    display: none;
+}

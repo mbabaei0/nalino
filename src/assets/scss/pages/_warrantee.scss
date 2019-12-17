@@ -1,0 +1,65 @@
+.warranteeModal {
+  font-size: 1.6rem;
+  padding: 2rem;
+  color: $text-color-dark;
+}
+.warrantee {
+  display: grid;
+  grid-template-columns:
+    [full-start] 1fr [center-start] repeat(6, [col-start] 1fr [col-end])
+    [center-end] 1fr [full-end];
+  grid-gap: 1rem;
+  justify-items: center;
+.dropDown{
+  width: 24rem;
+}
+  .box {
+    grid-column: center-start/center-end;
+    // display: flex;
+    // justify-content: center;
+    p {
+      color: $text-color-dark;
+      font-size: 1.4rem;
+      text-align: justify;
+      padding: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      &>*{
+        margin: 2rem 2rem;
+      }
+      //align-items: center;
+      //column-count: 2;
+
+      .radios {
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
+        justify-content: space-between;
+        &>*{
+          margin: 0rem 1rem;
+        }
+      }
+      .date{
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
+        justify-content: space-between;
+        &>*{
+          margin: 0rem .5rem;
+        }
+        input{
+          width: 10rem;
+        }
+      }
+      .dropDown{
+        margin: 1rem;
+      }
+      textarea{
+        width: 65vw;
+      }
+    }
+  }
+}

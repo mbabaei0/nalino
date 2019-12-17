@@ -1,0 +1,11 @@
+<div class="modal" [@dialog] *ngIf="visible">
+   <div class="modal__body" >
+    <div class="modal__body-close">
+        <i (click)="close()" class="flaticon-error"></i>
+    </div>
+    <ng-content></ng-content>
+   </div>
+   
+   <div class="modal__backDrop" (click)="close()"></div>
+</div>
+

@@ -1,0 +1,9 @@
+<div class="expansion">
+    <div class="expansion__header" [ngClass]="{ active: expand }" (click)="expand = !expand">
+        <ng-content select="[header]"></ng-content>
+    </div>
+    <div class="expansion__body" [ngClass]="{ expand: expand }">
+        <ng-content select="[body]"></ng-content>
+    </div>
+</div>
+ 

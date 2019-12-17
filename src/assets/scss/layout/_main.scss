@@ -1,0 +1,28 @@
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html{
+  box-sizing: border-box;
+  direction: rtl!important ;
+  font-size: 62.5%;
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+
+}
+
+}
+.main__container{
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: [nav-start] 6rem [nav-end body-start] 1fr [body-end];
+  grid-template-rows: min-content min-content 1fr;
+  @media only screen and (max-width: $bp-medium) {
+    height: initial;
+    grid-template-columns: [nav-start] 0rem [nav-end body-start]  1fr [body-end];
+
+ }
+}
+

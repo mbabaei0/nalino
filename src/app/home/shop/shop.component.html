@@ -1,0 +1,598 @@
+<div class="shop">
+    <div class="shop__stepper">
+        <ul class="shop__stepper-header">
+            <li class="tactive">
+                <strong>لیست کالاها</strong>
+                <i class="flaticon-shop"></i>
+            </li>
+            <li [ngClass]="{ tactive: initStep2 }">
+                <strong>انتخاب آدرس</strong>
+                <i class="flaticon-address"></i>
+            </li>
+            <li [ngClass]="{ tactive: initStep3 }">
+                <strong>تایید نهایی</strong>
+                <i class="flaticon-credit-card"></i>
+            </li>
+        </ul>
+    </div>
+    <div class="shop__stepper-body" [ngSwitch]="tab">
+        <div *ngSwitchCase="1" [@tab]>
+            <div class="shop__stepper-tab1">
+                <div class="table">
+                    <table style="width:100%">
+                        <tr>
+                            <th>ردیف</th>
+                            <th>تصویر</th>
+                            <th class="product">محصول</th>
+                            <th>رنگ</th>
+                            <th>تعداد</th>
+                            <th>قیمت واحد</th>
+                            <th>تخفیف</th>
+                            <th>قیمت نهایی</th>
+                            <th>حذف</th>
+                        </tr>
+                        <tr class="items">
+                            <td class="index">۱</td>
+                            <td class="img">
+                                <img src="assets/img/items/kids-2.png" alt="" />
+                            </td>
+                            <td class="title">
+                                <strong>قابلمه قشنگ</strong>
+                                <p>با درب چوبی و فر دار</p>
+                            </td>
+                            <td>قرمز</td>
+                            <td>
+                                <div class="number">
+                                    <i
+                                        class="flaticon-plus"
+                                        (click)="count = count + 1"
+                                    ></i>
+                                    <strong>{{ count }}</strong>
+                                    <i
+                                        class="flaticon-minus"
+                                        (click)="count = count - 1"
+                                    ></i>
+                                </div>
+                            </td>
+                            <td>۷۸ ریال</td>
+
+                            <td class="discount">۱۸۹٪</td>
+                            <td>
+                                <strong class="price">۱۹۰۹۹۰</strong>
+                                <small>ریال</small>
+                            </td>
+                            <td class="remove">
+                                <i class="flaticon-garbage"></i>
+                            </td>
+                        </tr>
+                        <tr class="items">
+                            <td class="index">۱</td>
+                            <td class="img">
+                                <img src="assets/img/items/kids-2.png" alt="" />
+                            </td>
+                            <td class="title">
+                                <strong>قابلمه قشنگ</strong>
+                                <p>با درب چوبی و فر دار</p>
+                            </td>
+                            <td>قرمز</td>
+                            <td>
+                                <div class="number">
+                                    <i
+                                        class="flaticon-plus"
+                                        (click)="count = count + 1"
+                                    ></i>
+                                    <strong>{{ count }}</strong>
+                                    <i
+                                        class="flaticon-minus"
+                                        (click)="count = count - 1"
+                                    ></i>
+                                </div>
+                            </td>
+                            <td>۷۸ ریال</td>
+
+                            <td class="discount">۱۸۹٪</td>
+                            <td>
+                                <strong class="price">۱۹۰۹۹۰</strong>
+                                <small>ریال</small>
+                            </td>
+                            <td class="remove">
+                                <i class="flaticon-garbage"></i>
+                            </td>
+                        </tr>
+                        <tr class="items">
+                            <td class="index">۱</td>
+                            <td class="img">
+                                <img src="assets/img/items/kids-2.png" alt="" />
+                            </td>
+                            <td class="title">
+                                <strong>قابلمه قشنگ</strong>
+                                <p>با درب چوبی و فر دار</p>
+                            </td>
+                            <td>قرمز</td>
+                            <td>
+                                <div class="number">
+                                    <i
+                                        class="flaticon-plus"
+                                        (click)="count = count + 1"
+                                    ></i>
+                                    <strong>{{ count }}</strong>
+                                    <i
+                                        class="flaticon-minus"
+                                        (click)="count = count - 1"
+                                    ></i>
+                                </div>
+                            </td>
+                            <td>۷۸ ریال</td>
+
+                            <td class="discount">۱۸۹٪</td>
+                            <td>
+                                <strong class="price">۱۹۰۹۹۰</strong>
+                                <small>ریال</small>
+                            </td>
+                            <td class="remove">
+                                <i class="flaticon-garbage"></i>
+                            </td>
+                        </tr>
+                        <tr class="items">
+                            <td class="index">۱</td>
+                            <td class="img">
+                                <img src="assets/img/items/kids-2.png" alt="" />
+                            </td>
+                            <td class="title">
+                                <strong>قابلمه قشنگ</strong>
+                                <p>با درب چوبی و فر دار</p>
+                            </td>
+                            <td>قرمز</td>
+                            <td>
+                                <div class="number">
+                                    <i
+                                        class="flaticon-plus"
+                                        (click)="count = count + 1"
+                                    ></i>
+                                    <strong>{{ count }}</strong>
+                                    <i
+                                        class="flaticon-minus"
+                                        (click)="count = count - 1"
+                                    ></i>
+                                </div>
+                            </td>
+                            <td>۷۸ ریال</td>
+
+                            <td class="discount">۱۸۹٪</td>
+                            <td>
+                                <strong class="price">۱۹۰۹۹۰</strong>
+                                <small>ریال</small>
+                            </td>
+                            <td class="remove">
+                                <i class="flaticon-garbage"></i>
+                            </td>
+                        </tr>
+                        <tr class="items">
+                            <td class="index">۱</td>
+                            <td class="img">
+                                <img src="assets/img/items/kids-2.png" alt="" />
+                            </td>
+                            <td class="title">
+                                <strong>قابلمه قشنگ</strong>
+                                <p>با درب چوبی و فر دار</p>
+                            </td>
+                            <td>قرمز</td>
+                            <td>
+                                <div class="number">
+                                    <i
+                                        class="flaticon-plus"
+                                        (click)="count = count + 1"
+                                    ></i>
+                                    <strong>{{ count }}</strong>
+                                    <i
+                                        class="flaticon-minus"
+                                        (click)="count = count - 1"
+                                    ></i>
+                                </div>
+                            </td>
+                            <td>۷۸ ریال</td>
+
+                            <td class="discount">۱۸۹٪</td>
+                            <td>
+                                <strong class="price">۱۹۰۹۹۰</strong>
+                                <small>ریال</small>
+                            </td>
+                            <td class="remove">
+                                <i class="flaticon-garbage"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="total">
+                    <div>
+                        <div class="form__group">
+                            <input
+                                type="text"
+                                class="form__input"
+                                placeholder="کد تخفیف"
+                                id="email"
+                                required
+                            />
+                            <label for="email" class="form__label"
+                                >کد تخفیف</label
+                            >
+                        </div>
+                        <button class="btn-blue" (click)="onSubmitStep1()">
+                            ثبت تخفیف
+                            <i class="flaticon-success"></i>
+                        </button>
+                        <span class="info">
+                            ر راستای ارائه خدمات بهتر و جلب رضایت سهامداران و
+                            همکاران گرامی شهرداری مشهد ، اطلاع از نظرات شما
+                            بزرگواران راه گشای ما خواهد بود. لذا خواهشمند است با
+                        </span>
+                    </div>
+                    <div>
+                        <div class="total__disctitle">تخفیف</div>
+                        <div class="total__discprice">
+                            <strong>۳۰۰۰۰</strong>
+                            ریال
+                        </div>
+                        <div class="total__title">مجموع</div>
+                        <div class="total__price">
+                            <strong>۵۴۰۰۰۰</strong>
+                            ریال
+                        </div>
+                        <button class="btn-primary" (click)="onSubmitStep1()">
+                            مرحله بعد
+                            <i class="flaticon-back"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngSwitchCase="2" [@tab]>
+            <div class="tab2">
+                <form class="tab2__add" [formGroup]="addressForm">
+                    <div class="main-heading">ثبت آدرس</div>
+                    <div class="form__group">
+                        <input
+                            type=""
+                            class="form__input"
+                            placeholder="نام گیرنده"
+                            id="email"
+                            required
+                        />
+                        <label for="email" class="form__label"
+                            >نام گیرنده</label
+                        >
+                    </div>
+                    <div class="form__group">
+                        <input
+                            type=""
+                            class="form__input"
+                            placeholder="شماره تلفن"
+                            id="pass"
+                            required
+                        />
+                        <label for="pass" class="form__label">شماره تلفن</label>
+                    </div>
+                    <div class="dropDown">
+                            <ng-select class="custom"></ng-select>
+                        <!-- <app-drop-down
+                            formControlName="provinceId"
+                            name="externalVal"
+                            [placeholder]="'استان'"
+                        ></app-drop-down> -->
+                    </div>
+                    <div class="dropDown">
+                            <ng-select class="custom"></ng-select>
+                        <!-- <app-drop-down
+                            [chooseById]="ostan.id"
+                            [placeholder]="'شهر'"
+                        ></app-drop-down> -->
+                    </div>
+
+                    <div class="form__group">
+                        <input
+                            type=""
+                            class="form__input"
+                            placeholder="آدرس کامل"
+                            id="pass"
+                            required
+                        />
+                        <label for="pass" class="form__label">آدرس کامل</label>
+                    </div>
+
+                    <div class="submit">
+                        <button class="btn-blue">ثبت آدرس</button>
+                    </div>
+
+                    {{ addressForm.value | json }}
+                </form>
+                <div class="tab2__choose">
+                    <form action="">
+                        <div class="main-heading">انتخاب آدرس</div>
+
+                        <div class="form__radio-group">
+                            <input
+                                type="radio"
+                                class="form__radio-input"
+                                id="small"
+                                name="size"
+                            />
+                            <label for="small" class="form__radio-label">
+                                <span class="form__radio-button"></span>
+                            </label>
+
+                            <span>
+                                <i class="flaticon-edit"></i>
+                                آمریکا - والا والاواش - خیابن ۴۳ غربی - کوچه
+                            </span>
+                        </div>
+                        <div class="form__radio-group">
+                            <input
+                                type="radio"
+                                class="form__radio-input"
+                                id="small2"
+                                name="size"
+                            />
+                            <label for="small2" class="form__radio-label">
+                                <span class="form__radio-button"></span>
+                            </label>
+                            <span>
+                                <i class="flaticon-edit"></i>
+                                اصفهان - خانه کاشانی ها - پلاک ۴۵۶</span
+                            >
+                        </div>
+                    </form>
+                    <div class="actions">
+                        <button class="btn-primary" (click)="onSubmitStep2()">
+                            <span> مرحله بعدی</span>
+                            <i class="flaticon-back"></i>
+                        </button>
+                        <button class="btn-orange" (click)="setTab(1)">
+                            <i class="flaticon-next"></i>
+                            <span> مرحله قبل</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngSwitchCase="3" class="t3-reset" [@tab]>
+            <div class="shop__stepper-tab3">
+                <div class="table">
+                    <table style="width:100%">
+                        <tr>
+                            <th>ردیف</th>
+                            <th>تصویر</th>
+                            <th class="product">محصول</th>
+                            <th>رنگ</th>
+                            <th>تعداد</th>
+                            <th>تخفیف</th>
+                            <th>قیمت نهایی</th>
+                        </tr>
+                        <tr class="items">
+                            <td class="index">۱</td>
+                            <td class="img">
+                                <img src="assets/img/items/kids-2.png" alt="" />
+                            </td>
+                            <td class="title">
+                                <strong>قابلمه قشنگ</strong>
+                                <p>با درب چوبی و فر دار</p>
+                            </td>
+                            <td>قرمز</td>
+                            <td>
+                                ۵
+                            </td>
+                            <td class="discount">۱۸۹٪</td>
+                            <td>
+                                <strong class="price">۱۹۰۹۹۰</strong>
+                                <small>ریال</small>
+                            </td>
+                        </tr>
+                        <tr class="items">
+                            <td class="index">۱</td>
+                            <td class="img">
+                                <img src="assets/img/items/kids-2.png" alt="" />
+                            </td>
+                            <td class="title">
+                                <strong>قابلمه قشنگ</strong>
+                                <p>با درب چوبی و فر دار</p>
+                            </td>
+                            <td>قرمز</td>
+                            <td>
+                                ۵
+                            </td>
+                            <td class="discount">۱۸۹٪</td>
+                            <td>
+                                <strong class="price">۱۹۰۹۹۰</strong>
+                                <small>ریال</small>
+                            </td>
+                        </tr>
+                        <tr class="items">
+                            <td class="index">۱</td>
+                            <td class="img">
+                                <img src="assets/img/items/kids-2.png" alt="" />
+                            </td>
+                            <td class="title">
+                                <strong>قابلمه قشنگ</strong>
+                                <p>با درب چوبی و فر دار</p>
+                            </td>
+                            <td>قرمز</td>
+                            <td>
+                                ۵
+                            </td>
+                            <td class="discount">۱۸۹٪</td>
+                            <td>
+                                <strong class="price">۱۹۰۹۹۰</strong>
+                                <small>ریال</small>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="total">
+                    <div class="total__send-title main-heading">نحوه ارسال</div>
+                    <div class="total__send">
+                        <div class="total__send-item active">
+                            <i class="flaticon-box"></i>
+                            <span>پست سفارشی</span>
+                            <div class="desc">
+                                لورم ایپسوم,لورم ساز,تولید کننده لورم
+                                ایپسوم,لورم ایپسوم فارسی,متن ساختگی,متن
+                                آزمایشی,متن
+                            </div>
+                        </div>
+                        <div class="total__send-item">
+                            <i class="flaticon-delivery-truck"></i>
+                            <span>اکسپرس</span>
+                            <div class="desc">
+                                لورم ایپسوم,لورم ساز,تولید کننده لورم
+                                ایپسوم,لورم ایپسوم فارسی,متن ساختگی,متن
+                                آزمایشی,متن
+                            </div>
+                        </div>
+                    </div>
+                    <div class="total__send-title main-heading">
+                        نحوه پرداخت
+                    </div>
+                    <div class="total__send">
+                        <div class="total__send-item active">
+                            <i class="flaticon-credit-cards-payment"></i>
+                            <span>کارت به کارت</span>
+                            <div class="desc">
+                                لورم ایپسوم,لورم ساز,تولید کننده لورم
+                                ایپسوم,لورم ایپسوم فارسی,متن ساختگی,متن
+                                آزمایشی,متن
+                            </div>
+                        </div>
+                        <div class="total__send-item">
+                            <i class="flaticon-password-1"></i>
+                            <span>اینترنتی</span>
+                            <div class="desc">
+                                لورم ایپسوم,لورم ساز,تولید کننده لورم
+                                ایپسوم,لورم ایپسوم فارسی,متن ساختگی,متن
+                                آزمایشی,متن
+                            </div>
+                        </div>
+                        <div class="total__send-item">
+                            <i class="flaticon-home-2"></i>
+                            <span>در محل</span>
+                            <div class="desc">
+                                لورم ایپسوم,لورم ساز,تولید کننده لورم
+                                ایپسوم,لورم ایپسوم فارسی,متن ساختگی,متن
+                                آزمایشی,متن
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main-heading">
+                        هزینه ارسال <i class="flaticon-delivery-truck"></i>
+                    </div>
+
+                    <div class="total__price-2">
+                        <strong>۳۰۰۰۰</strong>
+                        <small> ریال</small>
+                    </div>
+                    <div class="main-heading">
+                        میزان تخفیف <i class="flaticon-discount"></i>
+                    </div>
+
+                    <div class="total__price-2">
+                        <strong>۳۰۰۰۰</strong>
+                        <small> ریال</small>
+                    </div>
+                    <div class="main-heading">
+                        مبلغ قابل پرداخت <i class="flaticon-credit-card-1"></i>
+                    </div>
+
+                    <div class="total__price">
+                        <strong>۵۴۰۰۰۰</strong>
+
+                        <small> ریال</small>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="email" class="form__label"
+                            >توضیحات بیشتر</label
+                        >
+                        <textarea
+                            type="text"
+                            class="form__input"
+                            placeholder="توضیحات بیشتر در باره سفارش و ارسال"
+                            id="email"
+                            required
+                        ></textarea>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-primary" (click)="setTab(4)">
+                            پرداخت
+                            <i class="flaticon-tick-1"></i>
+                        </button>
+                        <button class="btn-orange" (click)="setTab(2)">
+                            مرحله قبل
+                            <i class="flaticon-next"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngSwitchCase="4" class="t3-reset" [@tab]>
+            <div class="shop__stepper-tab3">
+                <div class="table sucsesst">
+                    <table style="width:100%">
+                        <tr>
+                            <th>عنوان</th>
+
+                            <th>رنگ</th>
+                            <th>تعداد</th>
+                            <th>تخفیف</th>
+                            <th>قیمت نهایی</th>
+                        </tr>
+                        <tr class="items">
+                            <td class="title">
+                                <strong>قابلمه قشنگ</strong>
+                                <p>با درب چوبی و فر دار</p>
+                            </td>
+
+                            <td>قرمز</td>
+                            <td>
+                                ۵
+                            </td>
+                            <td class="discount">۱۸۹٪</td>
+                            <td>
+                                <strong class="price">۱۹۰۹۹۰</strong>
+                                <small>ریال</small>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="total sucsess">
+                    <div class="total__send-title main-heading">
+                        اطلاعات سفارش
+                    </div>
+                    <div class="sucsess_message">
+                        <div class="sucsess_message-title">
+                            با تشکر از انتخاب نالینو
+                            
+                        </div>
+                        <div class="sucsess_message-date">
+                            <i class="flaticon-calendar-2"></i>تاریخ سفارش :
+                            ۵۴/۶۵/۷۶۷۸
+                        </div>
+                        <div class="sucsess_message-date">
+                            <i class="flaticon-delivery-truck"></i>کد پیگریری
+                            سفارش : ۵۴/۶۵/۷۶۷۸
+                        </div>
+                        <p>
+                            لطفا مبلغ سفارش را به شماره کارت <strong>6125458989829829298</strong>
+                            نزد بانک سامان فرستاده کارت بکارت کنید و فیش را به
+                            شمراره واتس ا> <strong>09451222 45546</strong> ارسال نمایید
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer__container">
+    <app-footer></app-footer>
+</footer>

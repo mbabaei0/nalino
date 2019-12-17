@@ -1,0 +1,39 @@
+<div class="profile">
+    <div class="product__tab">
+        <ul class="product__tab-header">
+            <li [ngClass]="{ tactive: isSelected(1) }" (click)="setTab(1)">
+                <i class="flaticon-user-1"></i>
+                حساب کاربری
+            </li>
+            <li [ngClass]="{ tactive: isSelected(2) }" (click)="setTab(2)">
+                <i class="flaticon-sent"></i>
+                سفارشات
+            </li>
+            <li [ngClass]="{ tactive: isSelected(3) }" (click)="setTab(3)">
+                <i class="flaticon-credit-card-2"></i>
+                تراکنش ها
+            </li>
+            <li [ngClass]="{ tactive: isSelected(4) }" (click)="setTab(4)">
+                <i class="flaticon-placeholder"></i>
+                آدرس ها
+            </li>
+        </ul>
+        <div class="product__tab-body" [ngSwitch]="tab">
+            <div *ngSwitchCase="1" [@tab]>
+                <app-info></app-info>
+            </div>
+            <div *ngSwitchCase="2" [@tab]>
+                <app-orders></app-orders>
+            </div>
+            <div *ngSwitchCase="3" [@tab]>
+              <app-transactions></app-transactions>
+            </div>
+            <div *ngSwitchCase="4" [@tab] >
+               <app-adress></app-adress>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer__container">
+    <app-footer></app-footer>
+</footer>

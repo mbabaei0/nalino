@@ -1,0 +1,22 @@
+<div class="topNav "  #nav >
+    
+    <div class="topNav__right">
+        <span [routerLink]="['','auth']" class="bold">ثبت نام</span>
+        <span class="bold">ورود</span>
+        <span [routerLink]="['']" routerLinkActive="link-active"  >صفحه اصلی</span>
+        <span [routerLink]="['','blog']" routerLinkActive="link-active"  >بلاگ</span>
+        <span>سوال دارید؟</span>
+    </div>
+    <div class="topNav__left">
+        <img [routerLink]="['']" class="topNav__left-logo" src="assets/img/logo1.png" alt="">
+        <div class="topNav__left-icon" (click)="acardeon = !acardeon "><i class="flaticon-more"></i></div>
+    </div>
+    <div class="topNav__acardeon" *ngIf="acardeon" [@open]>
+            <div [routerLink]="['','auth']"  class="bold">ثبت نام</div>
+            <div class="bold" (click)="acardeon = false" >ورود</div>
+            <div [routerLink]="['']" routerLinkActive="link-active" (click)="acardeon = false"  >صفحه اصلی</div>
+            <div [routerLink]="['','blog']"  routerLinkActive="link-active" (click)="acardeon = false" >بلاگ</div>
+            <div (click)="acardeon = false">سوال دارید؟</div>
+    </div>
+    <div *ngIf="acardeon" (click)="acardeon = false"  class="backDrop">55</div>
+</div>

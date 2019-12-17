@@ -1,0 +1,47 @@
+.modal{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 1000000000;
+  display: grid;
+  top: 0;
+  grid-template-columns: repeat(8 , 1fr);
+  //grid-template-columns: repeat(8 , 1fr);
+
+  &__body{
+    grid-column: 3/7;
+    background: white;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    padding: 2rem;
+    width: 100%;
+    top: 10%;
+    position: absolute;
+    margin: auto;
+    z-index: 2;
+
+    &-close{
+      display: flex;
+      justify-content: flex-end;
+      i{
+        cursor: pointer;
+      }
+    }
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: 1/-1;
+      top: 0;
+    }
+  }
+
+  &__backDrop{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.24);
+
+
+  }
+}

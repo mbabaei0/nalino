@@ -1,0 +1,25 @@
+.colors__container{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .color{
+    cursor: pointer;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      margin: 0.5rem;
+      transform: scale(1);
+      transition: all 0.3s ease;
+      &-red{ @extend .color; background: red;}
+      &-green{@extend .color; background: green;}
+      &-blue{ @extend .color; background: blue;}
+      &-black{@extend .color; background: black;}
+  }
+  .active{
+      box-shadow: $box-shadow;
+      border: 2px solid rgb(252, 202, 162);
+      transform: scale(1.5);
+
+  }
+}

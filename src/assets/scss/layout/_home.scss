@@ -1,0 +1,18 @@
+.body__container {
+  // overflow: scroll;
+  // height: 100vh;
+  display: grid;
+  grid-row-gap: 2rem;
+  grid-column-gap: 1.5rem;
+  //grid-template-rows: min-content repeat(4, 10rem);
+  grid-template-columns: [full-start] 3rem [center-start] repeat(
+      8,
+      [col-start] 1fr [col-end]
+    ) [center-end] 3rem [full-end];
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: [full-start] 0.2rem [center-start] repeat(
+        8,
+        [col-start] 1fr [col-end]
+      ) [center-end] 0.2rem [full-end];
+  }
+}

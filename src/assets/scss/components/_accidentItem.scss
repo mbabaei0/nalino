@@ -1,0 +1,127 @@
+.itemAc{
+
+
+
+
+  &-1{
+    grid-column: col-start 5 /col-end 6 ; grid-row: 2/4;
+    @media only screen and (max-width: $bp-small) {
+
+      grid-column: col-start 1/col-end 4  ;
+      grid-row: 7/8;
+
+
+      }
+   }
+  &-2{
+    grid-column: col-start 7 /col-end 8; grid-row: 2/4;
+    @media only screen and (max-width: $bp-small) {
+
+      grid-column: col-start 5/col-end 8;
+      grid-row: 7/8;
+
+
+      }
+  }
+  &-3{
+    grid-column: col-start 5 /col-end 8; grid-row: 4/6;
+    @media only screen and (max-width: $bp-small) {
+
+      grid-column: col-start 1/col-end 8 ;
+      grid-row: auto;
+
+      }
+  }
+
+}
+.item{
+  background: white;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  position: relative;
+  padding: 1rem 2rem;
+
+
+  &__category{
+    font-size: 1.2rem;
+    color: $text-color-light;
+  }
+  &__title{
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  &__img{
+    width: 15rem;
+    margin: 0 auto;
+    img{
+      width: 100%;
+    }
+
+  }
+  &__addToCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    bottom: 0;
+
+
+    &-btn{
+      border:none;
+      background: $primary-color;
+      opacity: 0.8;
+      color: white;
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      z-index: 100;
+      right: 0;
+      bottom: 0;
+      cursor: pointer;
+      border-bottom-right-radius: 2rem;
+      border-top-left-radius: 2rem;
+      @media only screen and (max-width: $bp-medium) {
+        padding: 1rem 2rem;
+      }
+      span{
+        visibility: hidden;
+        font-size:1px;
+        opacity: 0;
+        transition: all .3s ease;
+      }
+      &:hover{
+        @media only screen and (max-width: $bp-medium) {
+         background: $primary-color-2;
+         font-size:0.5rem;
+        }
+        span{
+          visibility: visible;
+          font-size: 1.4rem;
+          opacity: 1;
+          padding: 1rem;
+          @media only screen and (max-width: $bp-medium) {
+            visibility: hidden;
+           font-size:0px;
+          }
+        }
+      }
+      &:active{
+        span{
+          visibility: visible;
+          font-size: 0rem;
+          opacity: 1;
+          padding: 1rem;
+        }
+      }
+    }
+    &-price{
+      position: absolute;
+      padding: 2rem;
+      font-size: 1.6rem;
+      left: 0;
+      bottom: 0;
+    }
+
+  }
+}

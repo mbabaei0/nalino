@@ -1,0 +1,27 @@
+<div class="main-heading"> آشپزخانه نالینو</div>
+
+<div class="home-kitchen">
+    <!-- <div class="home-kitchen__title">{{slide.title}}</div> -->
+    <div class="home-kitchen__body">
+        <p class="home-kitchen__body-text">
+            سایت محصولاتو متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است سایت محصولات زیبای نالینو برای
+            همه سایت و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم استی نالینو برای همه
+        </p>
+        
+        <div class="home-kitchen__body-slider__legend">
+            <div
+                class="home-kitchen__body-slider__legend-bullet"
+                *ngFor="let item of sliderItems; index as i"
+                (click)="num = i"
+                [ngClass]="{ active: num == i }"
+            ></div>
+        </div>
+    </div>
+    <figure class="home-kitchen__body-img">
+            <img [@img]="num" [src]="slide.url" alt="" />
+    </figure>
+    <div class="home-kitchen__controller">
+        <i class="flaticon-back" (click)=" next()" ></i>
+        <i class="flaticon-next" (click)=" prev()" ></i>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+ .partners__container{
+  grid-column: full-start/full-end;
+
+  .partners{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    &__item{
+      padding: 0.5rem;
+      width: 10rem;
+      height: 11rem;
+      margin: .5rem;
+      background: white;
+      box-shadow: $box-shadow;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      filter: grayscale(2);
+      transition: all 0.2s ease;
+
+
+      img{
+        width: 100%;
+      }
+      &:hover{
+        filter: grayscale(0);
+        box-shadow:$box-shadow-rev
+      }
+    }
+  }
+ }

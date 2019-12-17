@@ -1,0 +1,114 @@
+.auth {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
+  grid-template-rows: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: $bg-color;
+
+  &-container {
+    grid-column: col-start 3 / col-end 10;
+    display: grid;
+    grid-template-columns: repeat(8, [col-start] 1fr [col-end]);
+    background: white;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    overflow: hidden;
+    @media only screen and (max-width: $bp-small) {
+      grid-column: col-start 1 / col-end -1;
+      grid-template-rows: 1fr min-content;
+      border-radius: 0;
+      height: 100vh;
+    }
+    &__img {
+      grid-column: col-start 1 / col-end 4;
+      background-image: linear-gradient(
+          rgba($primary-color, 0.7),
+          rgba($primary-color-2, 0.7)
+        ),
+        url("assets/img/nat-9.jpg");
+      height: 100%;
+      background-size: cover;
+      -webkit-clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .home{
+        color: white;
+        background: rgba(245, 245, 245, 0.377);
+        box-shadow: $box-shadow;
+        padding:1.5rem 2rem;
+        border-radius: $border-radius;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        i::before{
+          font-size: 3rem;
+        }
+       span{
+        font-size: 1.2rem;
+
+       }
+      }
+      @media only screen and (max-width: $bp-small) {
+        grid-column: col-start 1 / col-end -1;
+        //height: 30vh;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        position: relative;
+        // hho{
+
+        //   box-shadow: $box-shadow;
+        //   padding:1rem 1.5rem;
+        //   border-radius: 1.5rem;
+        //   position: absolute;
+        //   top: -7px;
+        //   cursor: pointer;
+
+        // }
+
+      }
+
+
+    }
+    &__form {
+      color: $text-color-dark;
+      padding: 3rem;
+      grid-column: col-start 5 / col-end 8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      @media only screen and (max-width: $bp-small) {
+        grid-column: col-start 1 / col-end -1;
+      }
+      .heading-1 {
+        font-size: 2.5rem;
+        color: $primary-color;
+      }
+      p {
+        margin-bottom: 2.5rem;
+      }
+      .forgotPass{
+        color: $primary-color-3;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      form {
+        width: 70%;
+        input {
+          width: 100%;
+        }
+        .submit {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 2rem 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,134 @@
+.badge {
+  background: $primary-color;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: $border-radius;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.btn {
+  border: none;
+  border-radius: $border-radius ;
+  border-bottom-right-radius: 0;
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  box-shadow: $box-shadow;
+  display: flex;
+  align-items: center;
+  //padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  &:hover{
+    filter: saturate(0.8);
+  }
+  & i{
+    padding:0 1rem;
+    &::before{
+      font-size: 1.8rem;
+    }
+  }
+  @media only screen and (max-width: $bp-small) {
+    font-size: 1.2rem;
+    padding: 0.8rem 1rem;
+    & i{
+      padding:0 0.5rem;
+      &::before{
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+.btn-white {
+  @extend .btn;
+  background: white;
+  color: $text-color-dark;
+}
+.btn-primary {
+  @extend .btn;
+  background-color: $primary-color !important;
+  color: white !important;
+}
+.btn-orange {
+  @extend .btn;
+  background-color: $primary-color-2 !important;
+  color: white !important;
+}
+.btn-blue {
+  @extend .btn;
+  background-color: $primary-color-3 !important;
+  color: white !important;
+}
+
+.btn-nice {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.2rem;
+
+    //Change for the <button> element
+    border: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 1.3rem rgba(black, 0.1);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(black, 0.2);
+  }
+
+  &--white {
+    background-color: white;
+    color: $primary-color;
+
+    &::after {
+      background-color: white;
+    }
+  }
+
+  &--green {
+    background-color: $primary-color;
+    color: white;
+
+    &::after {
+      background-color: $primary-color;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
+}
+

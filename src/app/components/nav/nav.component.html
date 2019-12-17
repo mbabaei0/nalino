@@ -1,0 +1,120 @@
+<div class="nav">
+    <!-- <div class="nav__logo">
+        <img src="assets/img/logo.png" alt="nalino-logo" />
+    </div> -->
+    <ul class="nav__top">
+        <li
+            class="icon "
+            [ngClass]="{ active: catActive }"
+            (click)="catActive = !catActive; searchActive = false"
+        >
+            <div class="nav__top__btn-container">
+                <button class="nav-btn"></button>
+            </div>
+        </li>
+
+        <li
+            class="icon"
+            [ngClass]="{ active: searchActive }"
+            (click)="searchActive = !searchActive; catActive = false"
+        >
+            <i class="flaticon-search"></i>
+        </li>
+        <li class="icon">
+            <i class="flaticon-settings"></i>
+        </li>
+    </ul>
+
+    <!-------------------------- nav bottom ---------------------- -->
+    <ul class="nav__bottom">
+        <li class="icon"
+        [routerLink]="['/home', 'profile']"
+        routerLinkActive="active"
+        ><i class="flaticon-user-2"></i></li>
+        <!-------------------------- buy ---------------------- -->
+        <li
+            class="icon "
+            [routerLink]="['/home', 'shop']"
+            routerLinkActive="active"
+        >
+            <i class="flaticon-supermarket"></i>
+            <span class="num" [ngClass]="{notify: notify}">۲</span>
+        </li>
+    </ul>
+
+    <!----------------------- categories section ------------------------>
+    <div class="cat" *ngIf="catActive" @nav>
+        <app-expanison
+            style="width: 100%"
+            *ngFor="let panel of categoryItems; index as i"
+            (click)="openExpansionPanel(i)"
+            [expand]="panel.state"
+        >
+            <div header>{{ panel.title }}</div>
+            <div body>
+                <!-- iner -->
+                <app-expanison
+                    style="width: 100%"
+                    *ngFor="let p of panel.sub; index as i"
+                >
+                    <div header [routerLink]="['/home', 'mainproducts']">
+                        {{ p.title }}
+                    </div>
+                    <div body>
+                        <small
+                            (click)="catActive = false"
+                            [routerLink]="['/home', 'products']"
+                            routerLinkActive="router-link-active"
+                            >{{ p.title }}</small
+                        >
+                    </div>
+                </app-expanison>
+                <!-- iner -->
+            </div>
+        </app-expanison>
+
+        <!----------------------- selected category ------------------------>
+        <!-- <div style=" flex: 1; ">
+                <div class="cat__selected" *ngIf="selectedCategory" (click)="selectedCategory = null" @singelItem>
+                    {{ selectedCategory?.title }}
+               </div>
+         </div> -->
+        <!-----------------------  category list ------------------------>
+        <!-- <ul class="cat__list" *ngIf="!selectedCategory" @list >
+            <li class="cat__list-item" *ngFor="let item of categoryItems" @items
+                                        (click)="selectCategory(item)">
+                {{ item.title }}
+            </li>
+
+        </ul>
+        <ul class="cat__list" *ngIf="selectedCategory" @list>
+            <li class="cat__list-item" *ngFor="let item of selectedCategory.sub"   @items
+                                        (click)="selectSubCategory(item)">
+                {{ item.title }}
+            </li>
+
+        </ul>  -->
+    </div>
+    <div
+        class="cat__backDrop"
+        *ngIf="catActive"
+        (click)="catActive = false"
+    ></div>
+
+    <!----------------------- search section ------------------------>
+    <div class="nav__search" *ngIf="searchActive" @search>
+        <div class="nav__search-box">
+            <i class="flaticon-magnifying-glass"></i>
+            <input type="text" placeholder="جستجو" />
+            <button ly-button class="btn-primary">
+                <span>جستجو</span>
+                <i class="flaticon-back"></i>
+            </button>
+        </div>
+    </div>
+    <div
+        class="nav__search-backDrop"
+        *ngIf="searchActive"
+        (click)="searchActive = false"
+    ></div>
+</div>

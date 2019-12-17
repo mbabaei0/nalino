@@ -1,0 +1,13 @@
+.rating{
+  display: flex;
+  i{
+    padding-left:  1rem;
+    color: rgb(206, 206, 206);
+  }
+  .active{
+    color: gold;
+  }
+  .click{
+    cursor: pointer;
+  }
+}

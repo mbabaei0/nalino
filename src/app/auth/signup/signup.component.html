@@ -1,0 +1,83 @@
+<div class="auth">
+    <div class="auth-container">
+        <div class="auth-container__img">
+               <div class="home">
+                <i class="flaticon-ecommerce" [routerLink]="['/']" ></i>
+                <span>فروشگاه</span>
+               </div>
+        </div>
+        <div class="auth-container__form">
+            <div class="heading-1">همین الان ثبت نام کنید</div>
+            <p>متن لورم ایدسوم متن لورم ایدسوم متن لورم ایدسوم متن لورم ایدسوم متن لورم ایدسوم </p>
+            
+            <ng-container class="product__tab-body" [ngSwitch]="tab">
+                    <ng-container *ngSwitchCase="1" [@tab]>
+                            <form action="">
+                                    <div class="form__group">
+                                        <input
+                                            type="text"
+                                            class="form__input"
+                                            placeholder="نام و نام خانوادگی"
+                                            id="name"
+                                            required
+                                        />
+                                        <label for="name" class="form__label"
+                                            >نام و نام خانوادگی</label
+                                        >
+                                    </div>
+                    
+                                    <div class="form__group">
+                                        <input
+                                            type="text"
+                                            class="form__input"
+                                            placeholder="شماره تلفن"
+                                            id="pass"
+                                            required
+                                        />
+                                        <label for="pass" class="form__label">شماره تلفن</label>
+                                    </div>
+                                    <div class="form__radio-group">
+                                            <input type="radio" class="form__radio-input" id="small" name="size">
+                                            <label for="small" class="form__radio-label">
+                                                    
+                                            <span class="form__radio-button"></span>
+                                               
+                                            </label>
+                                            <span>قوانین را می پذیرم</span>
+                                    </div>
+                                        
+                                     <div class="submit">
+                                            <button class="btn-primary" (click)="setTab(2) "> ثبت نام</button>
+                                            <a [routerLink]="['','auth','signin']">اکانت دارین؟ ورود</a>
+                                     </div>
+                            </form>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="2" [@tab]>
+                            <form action="" [@tab]>
+                                    <div class="form__group">
+                                        <input
+                                            type="text"
+                                            class="form__input"
+                                            placeholder="کد تایید را وارد کنید"
+                                            id="name"
+                                            required
+                                        />
+                                        <label for="name" class="form__label"
+                                            >کد تایید را وارد کنید</label
+                                        >
+                                    </div>
+                    
+                                    
+                                        
+                                     <div class="submit">
+                                            <button class="btn-primary" > ثبت نام</button>
+                                            <a [routerLink]="['','auth','signin']">اکانت دارین؟ ورود</a>
+                                     </div>
+                            </form>
+                    </ng-container>
+                    
+            </ng-container>
+            
+        </div>
+    </div>
+</div>

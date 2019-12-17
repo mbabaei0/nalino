@@ -1,0 +1,100 @@
+<div class="profile__info">
+        <ng-container class="product__tab-body" [ngSwitch]="tab">
+                <ng-container *ngSwitchCase="1" >
+                       <ul class="profile__info-list">
+                           <li>
+                               <strong> نام و نام خانوادگی</strong>
+                               <span> صادق هدایت</span>
+                           </li>
+                           <li>
+                               <strong> شماره تلفن</strong>
+                               <span> 09362764272</span>
+                           </li>
+                           <li>
+                               <strong>ایمیل</strong>
+                               <span> info@nalinoco.ir</span>
+                           </li>
+                           <li>
+                               <button (click)="setTab(2)" class="btn-orange">ویرایش  پروفایل</button>
+                               <button (click)="setTab(3)" class="btn-blue">تغییر کلمه عبور</button>
+                               <button class="btn-primary">خروج از حساب</button>
+                           </li>
+                       </ul>
+                </ng-container>
+                <ng-container *ngSwitchCase="2" >
+                        <form action="" [@tab]>
+                                <div class="form__group">
+                                    <input
+                                        type="text"
+                                        class="form__input"
+                                        placeholder="نام و نام خانوادگی"
+                                        id="name"
+                                        required
+                                    />
+                                    <label for="name" class="form__label"
+                                        >نام و نام خانوادگی</label
+                                    >
+                                </div>
+                                <div class="form__group">
+                                    <input
+                                        type="text"
+                                        class="form__input"
+                                        placeholder="تلفن همراه"
+                                        id="name"
+                                        required
+                                    />
+                                    <label for="name" class="form__label"
+                                        >تلفن همراه</label
+                                    >
+                                </div>
+                                <div class="form__group">
+                                    <input
+                                        type="text"
+                                        class="form__input"
+                                        placeholder="ایمیل"
+                                        id="name"
+                                        required
+                                    />
+                                    <label for="name" class="form__label"
+                                        >ایمیل</label
+                                    >
+                                </div>
+                
+                                
+                                    
+                                 <div class="submit">
+                                        <button (click)="setTab(1)" class="btn-primary" >
+                                                <span> ثبت تغییرات</span>
+                                            <i class="flaticon-tick-1"></i>
+                                          
+                                            </button>
+                                       
+                                 </div>
+                        </form>
+                </ng-container>
+                <ng-container *ngSwitchCase="3" >
+                        <form action="" [@tab]>
+                                <div class="form__group">
+                                    <input
+                                        type="text"
+                                        class="form__input"
+                                        placeholder="کد تایید را وارد کنید"
+                                        id="name"
+                                        required
+                                    />
+                                    <label for="name" class="form__label"
+                                        >کد تایید را وارد کنید</label
+                                    >
+                                </div>
+                
+                                
+                                    
+                                 <div class="submit">
+                                        <button class="btn-primary" > ثبت نام</button>
+                                       
+                                 </div>
+                        </form>
+                </ng-container>
+                
+        </ng-container>
+</div>

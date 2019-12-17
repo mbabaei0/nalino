@@ -1,0 +1,38 @@
+<ly-accordion [withClass]="classes.expansion" [hasToggle]="false" style="width: 100%;">
+                <ly-expansion-panel style="box-shadow: none; border-bottom: 1px solid rgba(245, 245, 245, 0.658);"
+                    *ngFor="let panel of categoryItems; index as i"
+                    [expanded]="panel.state"
+                    (opened)="panel.state = true"
+                    (closed)="panel.state = false"
+                >
+                    <ly-expansion-panel-header>
+                        <ly-panel-title
+                            >
+                            {{panel.title }}</ly-panel-title
+                        >
+                       
+                    </ly-expansion-panel-header>
+                    <!-- <strong style="font-size: 1.2rem;">{{panel.title}}</strong> -->
+
+                    <!-- ----------------------inner----------------------- -->
+                    <ly-accordion [withClass]="classes.expansion" [hasToggle]="false" style="width: 100%;">
+                            <ly-expansion-panel class="reset reset2" style="box-shadow: none; width: 100%;"
+                                *ngFor="let p of panel.sub; index as i"
+                                [expanded]="p.state"
+                                (opened)="p.state = true"
+                                (closed)="p.state = false"
+                            >
+                                <ly-expansion-panel-header class="reset2" style="box-shadow: none; width: 100%; height: 4rem;">
+                                    <ly-panel-title class="reset2"
+                                        >
+                                        {{p.title }}</ly-panel-title
+                                    >
+                                   
+                                </ly-expansion-panel-header>
+                                <strong  (click)="onSelectCategory(p)" style="font-size: 1.2rem; padding: 1rem; cursor: pointer;">{{p.title}}</strong>
+                                <!-- {{p.title }} -->
+                            </ly-expansion-panel>
+                        </ly-accordion>
+                    <!-- ----------------------inner----------------------- -->
+                </ly-expansion-panel>
+            </ly-accordion>

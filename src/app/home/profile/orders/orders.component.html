@@ -1,0 +1,291 @@
+<div class="profile__order">
+    <div *ngIf="empty" class="profile__order-empty">
+        <p>سفارشی برای شما ثبت نشده است</p>
+        <i class="flaticon-sent"></i>
+    </div>
+    <div *ngIf="!empty" class="profile__order-full">
+        <ng-container class="product__tab-body" [ngSwitch]="tab">
+            <ng-container *ngSwitchCase="1">
+                <div class="table">
+                    <table class="resTabe" style="width:100%">
+                        <tr>
+                            <th>تاریخ</th>
+                            <th>مبلغ کل</th>
+                            <th class="product">وضعیت پرداخت</th>
+                            <th>نوع پرداخت</th>
+                            <th>نوع ارسال</th>
+                            <th>وضعیت سفارش</th>
+                            
+                            
+                        </tr>
+                        <tr class="items">
+                            <td class="index">۹۸-۷۸-۵۶ | ۰۹:۴۵</td>
+                            <td >
+                                ۷۸۰۰۰۰۰۰
+                            </td>
+                            <td >
+                                <strong>تسویه شده</strong>
+                              
+                            </td>
+                            <td>موتور سیکلت</td>
+                            <td>
+                                تحویل داده شذ
+                            </td>
+                            <td>
+                                تحویل داده شذ
+                            </td>
+                            <td class="btn-tab">
+                                <button class="btn-blue" (click)="setTab(2)">جزییات</button>
+                            </td>
+
+                           
+                        </tr>
+                        <tr class="items">
+                            <td class="index">۹۸-۷۸-۵۶ | ۰۹:۴۵</td>
+                            <td >
+                                ۷۸۰۰۰۰۰۰
+                            </td>
+                            <td >
+                                <strong>تسویه شده</strong>
+                              
+                            </td>
+                            <td>موتور سیکلت</td>
+                            <td>
+                                تحویل داده شذ
+                            </td>
+                            <td>
+                                تحویل داده شذ
+                            </td>
+                            <td class="btn-tab">
+                                <button class="btn-blue" (click)="setTab(2)">جزییات</button>
+                            </td>
+
+                           
+                        </tr>
+                        <tr class="items">
+                            <td class="index">۹۸-۷۸-۵۶ | ۰۹:۴۵</td>
+                            <td >
+                                ۷۸۰۰۰۰۰۰
+                            </td>
+                            <td >
+                                <strong>تسویه شده</strong>
+                              
+                            </td>
+                            <td>موتور سیکلت</td>
+                            <td>
+                                تحویل داده شذ
+                            </td>
+                            <td>
+                                تحویل داده شذ
+                            </td>
+                            <td class="btn-tab">
+                                <button class="btn-blue" (click)="setTab(2)">جزییات</button>
+                            </td>
+
+                           
+                        </tr>
+                        
+                        
+                    </table>
+                </div>
+            </ng-container>
+            <ng-container *ngSwitchCase="2">
+                <div class="table">
+                    <div class="main-heading-2">لیست محصولات سفارش</div>
+                    <table class="resTabe" style="width:100%">
+                        <tr>
+                            <th>ردیف</th>
+                            <th>عنوان</th>
+                            <th class="product">تعداد</th>
+                            <th>رنگ</th>
+                            <th>نوع ارسال</th>
+                            <th>وضعیت سفارش</th>
+                            
+                            
+                        </tr>
+                        <tr class="items">
+                            <td class="index">۱</td>
+                            <td >
+                                    <strong>قابلمه بنفش</strong>
+                            </td>
+                            <td >
+                                زرد
+                              
+                            </td>
+                            <td>موتور سیکلت</td>
+                            <td>
+                                تحویل داده شذ
+                            </td>
+                            <td>
+                                تحویل داده شذ
+                            </td>
+                           
+
+                           
+                        </tr>
+
+                        
+                    </table>
+                    <div class="main-heading-2">اطلاعاتل سفارش</div>
+                    <table class="inline" style="width:30%">
+                        
+                        <tr class="items">
+                           
+                            <td >
+                                    <strong>شماره سفارش</strong>
+                            </td>
+                            <td >
+                                    ۷۶۷۵۶۴ ۴۵ 
+                            </td>
+                        </tr>
+                        <tr class="items">
+                           
+                            <td >
+                                    <strong>شماره تلفن</strong>
+                            </td>
+                            <td >
+                                   ۰۹۸۸۷ ۶۵ ۶۵۶۵۶
+                            </td>
+                        </tr>
+                        <tr class="items">
+                           
+                            <td >
+                                    <strong>قابلمه بنفش</strong>
+                            </td>
+                            <td >
+                                    اتعهع
+                            </td>
+                        </tr>
+                        <tr class="items">
+                           
+                            <td >
+                                    <strong>قابلمه بنفش</strong>
+                            </td>
+                            <td >
+                                    اتعهع
+                            </td>
+                        </tr>
+
+                        
+                    </table>
+                    <table class="inline" style="width:30%">
+                        
+                        <tr class="items">
+                           
+                            <td >
+                                    <strong>شماره سفارش</strong>
+                            </td>
+                            <td >
+                                    ۷۶۷۵۶۴ ۴۵ 
+                            </td>
+                        </tr>
+                        <tr class="items">
+                           
+                            <td >
+                                    <strong>شماره تلفن</strong>
+                            </td>
+                            <td >
+                                   ۰۹۸۸۷ ۶۵ ۶۵۶۵۶
+                            </td>
+                        </tr>
+                        <tr class="items">
+                           
+                            <td >
+                                    <strong>قابلمه بنفش</strong>
+                            </td>
+                            <td >
+                                    اتعهع
+                            </td>
+                        </tr>
+                        <tr class="items">
+                           
+                            <td >
+                                    <strong>قابلمه بنفش</strong>
+                            </td>
+                            <td >
+                                    اتعهع
+                            </td>
+                        </tr>
+
+                        
+                    </table>
+                    <table class="inline" style="width:30%">
+                        
+                        <tr class="items">
+                           
+                            <td >
+                                    <strong>شماره سفارش</strong>
+                            </td>
+                            <td >
+                                    ۷۶۷۵۶۴ ۴۵ 
+                            </td>
+                        </tr>
+                        <tr class="items">
+                           
+                            <td >
+                                    <strong>شماره تلفن</strong>
+                            </td>
+                            <td >
+                                   ۰۹۸۸۷ ۶۵ ۶۵۶۵۶
+                            </td>
+                        </tr>
+                        <tr class="items">
+                           
+                            <td >
+                                    <strong>قابلمه بنفش</strong>
+                            </td>
+                            <td >
+                                    اتعهع
+                            </td>
+                        </tr>
+                        <tr class="items">
+                           
+                            <td >
+                                    <strong>قابلمه بنفش</strong>
+                            </td>
+                            <td >
+                                    اتعهع
+                            </td>
+                        </tr>
+
+                        
+                    </table>
+                    <table style="width:100%">
+                        
+                        <tr class="items">
+                           
+                            <td >
+                                    <strong>آدرس گیرنده</strong>
+                            </td>
+                            <td >
+                                    اصفهان - ابريشم - ثقلثقل - اصفهان - ابريشم - ثقلثقل
+                            </td>
+                        </tr>
+                        <tr class="items">
+                           
+                            <td >
+                                    <strong>توضیحات</strong>
+                            </td>
+                            <td >
+                                   ۰۹۸۸۷ ۶۵ ۶۵۶۵۶
+                            </td>
+                        </tr>
+                        <tr class="items">
+                           
+                            <td >
+                                    <strong>یادداشت مدیر سایت</strong>
+                            </td>
+                            <td >
+                                    اتعهع
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="actions">
+                        <button class="btn-blue" (click)="setTab(1)">لیست سفارشات</button>
+                        <button class="btn-primary">پرداخت آنلاین</button>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>

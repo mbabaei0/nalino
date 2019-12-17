@@ -1,0 +1,143 @@
+<!---------------------------------- modal --------------------------------->
+<app-modal [visible]="remindMeModal" (visibleChange)="closeModal($event)">
+    <form class="reminderModal" action="">
+        <div class="form__group">
+            <input
+                type="email"
+                class="form__input"
+                placeholder="آدرس ایمیل"
+                id="email"
+                required
+            />
+            <label for="email" class="form__label">آدرس ایمیل</label>
+        </div>
+        <button class="btn-primary">ثبت</button>
+    </form>
+</app-modal>
+<!---------------------------------- modal end --------------------------------->
+<div class="body__container">
+    <div class="product__slider">
+        <app-three-js></app-three-js>
+        <app-img-slider></app-img-slider>
+    </div>
+    
+    <div class="product__detail">
+        <div class="product__detail-share">
+            <i class="flaticon-share"></i>
+            <div class="socials">
+                <i class="flaticon-instagram-1"></i>
+                <i class="flaticon-telegram"></i>
+                <i class="flaticon-envelope"></i>
+            </div>
+            <div class="link">
+                <i class="flaticon-tick-1"></i>
+                <span>bit.nalino/td</span>
+            </div>
+        </div>
+        <div class="product__detail-fave">
+            <i class="flaticon-favorites"></i>
+        </div>
+        <div class="product__detail-compare">
+            <i class="flaticon-random"></i>
+        </div>
+        <app-rating [rate]="4"></app-rating>
+        <div class="product__detail-category">گرانیت</div>
+
+        <div class="product__detail-title">
+            قابلمه گرانیتی زیبا
+            <div class=" en">Nalino Pianit pot</div>
+        </div>
+
+        <div class="product__detail-decs">
+            <ul>
+                <li>خوشمزه</li>
+                <li>خوشرنگ</li>
+                <li>ضد آب</li>
+            </ul>
+        </div>
+
+        <div class="product__detail-options">
+            <app-colors></app-colors>
+            <!-- <ly-radio-group style="font-size:1.5rem;">
+                <ly-radio style="margin:0" value="1">درب شیشه ای</ly-radio>
+                <ly-radio value="2" checked>درب چوبی</ly-radio>
+            </ly-radio-group> -->
+            <form action=""  class="radios">
+                    <div class="form__radio-group">
+                            <input type="radio" class="form__radio-input" id="small" name="size">
+                            <label for="small" class="form__radio-label">
+                                    
+                            <span class="form__radio-button"></span>
+                               
+                            </label>
+                            <span>درب چوبی</span>
+                    </div>
+                    <div class="form__radio-group">
+                            <input type="radio" class="form__radio-input" id="small2" name="size">
+                            <label for="small2" class="form__radio-label">
+                                    
+                            <span class="form__radio-button"></span>
+                               
+                            </label>
+                            <span>درب فلزی</span>
+                    </div>
+            </form>
+        </div>
+        <div class="product__detail-checkout">
+            <del>۲۰۰۰۰ ریال</del>
+            <div class="price">۴۰۰۰۰ ریال</div>
+            <div class="number">
+                <i class="flaticon-plus" (click)="count = count + 1"></i>
+                <strong>{{ count }}</strong>
+                <i class="flaticon-minus" (click)="count = count - 1"></i>
+            </div>
+            <span class="sum"
+                >مجموع : {{ count * 4000 }} <small>ریال</small></span
+            >
+        </div>
+        <div class="product__detail-bottom">
+            <div class="product__detail-callMe" (click)="remindMeModal = true">
+                <a>موجود شد بمن خبر بده </a>
+                <i class="flaticon-phone-call"></i>
+            </div>
+            <button class="btn-blue">
+                <strong>افزودن به سبد خرید</strong>
+                <i class="flaticon-shop"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="product__tab">
+        <ul class="product__tab-header">
+            <li [ngClass]="{ tactive: isSelected(3) }" (click)="setTab(3)">
+                توضیحات
+            </li>
+            <li [ngClass]="{ tactive: isSelected(1) }" (click)="setTab(1)">
+                جزییات محصول
+            </li>
+            <li [ngClass]="{ tactive: isSelected(2) }" (click)="setTab(2)">
+                نظرات کاربران
+            </li>
+        </ul>
+        <div class="product__tab-body" [ngSwitch]="tab">
+            <div *ngSwitchCase="1" [@tab]>
+                <app-product-detail></app-product-detail>
+            </div>
+            <div *ngSwitchCase="2" [@tab]>
+                <app-comments></app-comments>
+            </div>
+            <div *ngSwitchCase="3" [@tab] class="product__tab-body-desc">
+                لورم ایپسوم,لورم ساز,تولید کننده لورم ایپسوم,لورم ایپسوم
+                فارسی,متن ساختگی,متن آزمایشی,متن نمونه فارسی,متن ساز لورم,متن
+                آماده,لورم ایپسوم وردپرس,لورم اپیسوم
+            </div>
+        </div>
+    </div>
+    <div class="products__container ">
+            <app-products></app-products>
+    </div>
+    <footer class="footer__container">
+            <app-footer></app-footer>
+           
+    </footer>
+</div>
